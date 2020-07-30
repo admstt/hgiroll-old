@@ -5,7 +5,7 @@ const
 
 // Thanks -> https://stackoverflow.com/a/19734810/7594368
 function javaversion(callback) {
-    let spawn = cp.spawn('proot', 'java', ['-version']);
+    let spawn = cp.spawn('java', ['-version']);
     spawn.on('error', (err) => callback("Unable to spawn Java - " + err, null));
     spawn.stderr.on('data', (data) => {
         data = data.toString().split('\n')[0];
